@@ -1,0 +1,29 @@
+﻿@model Cutting_edge_webapp.Models.Street
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Street</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.City.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.City.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.StreetID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
