@@ -7,7 +7,7 @@ namespace Cutting_edge_webapp.Models
     {
         #region Fields
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StreetID { get; set; }
         public string Name { get; set; }
 
