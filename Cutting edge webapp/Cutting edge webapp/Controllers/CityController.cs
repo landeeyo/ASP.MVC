@@ -122,5 +122,14 @@ namespace Cutting_edge_webapp.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        //
+        // GET: /City/ListByCountry/5
+
+        public JsonResult ListByCountry(int id = 0)
+        {
+            var cityList = db.Cities.Where(s => s.CountryID == id).ToArray();
+            return Json(new SelectList(cityList, "CityID", "Name"), JsonRequestBehavior.AllowGet);
+        }
     }
 }

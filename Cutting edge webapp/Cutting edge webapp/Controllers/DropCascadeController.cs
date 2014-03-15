@@ -19,9 +19,7 @@ namespace Cutting_edge_webapp.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.CountryID = new SelectList(db.Countries, "CountryID", "Name");
-            ViewBag.CityID = new SelectList(db.Cities, "CityID", "Name");
-            ViewBag.StreetID = new SelectList(db.Streets, "StreetID", "Name");
+            ViewBag.Countries = new SelectList(db.Countries, "CountryID", "Name");
             return View();
         }
 

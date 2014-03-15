@@ -10,8 +10,6 @@ namespace Cutting_edge_webapp.Models
         #region Request
 
         public List<Country> Countries { get; set; }
-        public List<City> Cities { get; set; }
-        public List<Street> Streets { get; set; }
 
         #endregion
 

@@ -7,12 +7,28 @@
 
 <h2>Drop cascade</h2>
 
-@Html.Label("Country: ")  @Html.DropDownList("CountryID", String.Empty) <br />
-@Html.Label("City: ")  @Html.DropDownList("CityID", String.Empty) <br />
-@Html.Label("Street: ")  @Html.DropDownList("StreetID", String.Empty) <br />
+@Html.Label("Country: ")  @Html.DropDownList("Country", ViewBag.Countries as SelectList, "Select country", new { id = "Country" })<br />
+@Html.Label("City")
+<select id="City" name="City"></select>
+@Html.ValidationMessage("City", "*")
 <br />
-@Html.Label("Country: ")  @Html.DropDownList("CountryID", ViewBag.StateName as SelectList, "Select country", new { id = "CountryID" })<br />
 <br />
 <p>
     <input type="submit" value="Create" id="SubmitId" />
 </p>
+
+@Scripts.Render("~/bundles/jquery")
+@*Data loading for city dropdownlist*@
+<script type="text/jscript">
+    $(function () {
+        $('#Country').change(function () {
+            $.getJSON('/City/ListByCountry/' + $('#Country').val(), function (data) {
+                var items = '<option>Select city</option>';
+                $.each(data, function (i, city) {
+                    items += "<option value='" + city.Value + "'>" + city.Text + "</option>";
+                });
+                $('#City').html(items);
+            });
+        });
+    });
+</script>
