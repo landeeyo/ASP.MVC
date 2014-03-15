@@ -124,6 +124,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\DropCascadeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StreetController.cs" />
     <Compile Include="DAL\LocalizationContext.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\DropCascade.cs" />
     <Compile Include="Models\Street.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -242,6 +244,7 @@
     <Content Include="Views\Street\Create.cshtml" />
     <Content Include="Views\Street\Edit.cshtml" />
     <Content Include="Views\Street\Delete.cshtml" />
+    <Content Include="Views\DropCascade\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

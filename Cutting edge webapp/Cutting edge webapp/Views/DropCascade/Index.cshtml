@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Cutting_edge_webapp.Models.DropCascade>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Drop cascade</h2>
+
+@Html.Label("Country: ")  @Html.DropDownList("CountryID", String.Empty) <br />
+@Html.Label("City: ")  @Html.DropDownList("CityID", String.Empty) <br />
+@Html.Label("Street: ")  @Html.DropDownList("StreetID", String.Empty) <br />
+<br />
+@Html.Label("Country: ")  @Html.DropDownList("CountryID", ViewBag.StateName as SelectList, "Select country", new { id = "CountryID" })<br />
+<br />
+<p>
+    <input type="submit" value="Create" id="SubmitId" />
+</p>
