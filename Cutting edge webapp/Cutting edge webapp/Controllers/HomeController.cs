@@ -14,7 +14,6 @@ namespace Cutting_edge_webapp.Controllers
         public ActionResult Index()
         {
             return View();
-        }
-
+        }        
     }
 }
