@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Cutting_edge_webapp.Models.DropCascade>
+﻿@model Cutting_edge_webapp.Models.DropCascade
 
 @{
     ViewBag.Title = "Index";
@@ -7,18 +7,24 @@
 
 <h2>Drop cascade</h2>
 
-@Html.Label("Country: ")  @Html.DropDownList("Country", ViewBag.Countries as SelectList, "Select country", new { id = "Country" })<br />
-@Html.Label("City")
-<select id="City" name="City"></select>
-@Html.ValidationMessage("City", "*")
-<br />
-<select id="Street" name="Street"></select>
-@Html.ValidationMessage("Street", "*")
-<br />
-<br />
-<p>
-    <input type="submit" value="Create" id="SubmitId" />
-</p>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Street cascade selector</legend>
+
+        @Html.Label("Country: ") 
+        @Html.DropDownListFor(model => model.SelectedCountryID, ViewBag.Countries as SelectList, "Select country", new { id = "Country" })<br />
+        @Html.Label("City: ")
+        @Html.DropDownListFor(model => model.SelectedCityID, Enumerable.Empty<SelectListItem>(), "Select city", new { id = "City" })<br />
+        @Html.Label("Street: ")
+        @Html.DropDownListFor(model => model.SelectedStreetID, Enumerable.Empty<SelectListItem>(), "Select street", new { id = "Street" })<br />
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
 
 @Scripts.Render("~/bundles/jquery")
 <script type="text/jscript">
@@ -32,6 +38,8 @@
                 });
                 $('#City').html(items);
             });
+            var items = '<option>Select city</option>';
+            $('#Street').html(items);
         });
     });
     //Data loading for city dropdownlist
