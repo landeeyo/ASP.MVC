@@ -12,14 +12,17 @@
 <select id="City" name="City"></select>
 @Html.ValidationMessage("City", "*")
 <br />
+<select id="Street" name="Street"></select>
+@Html.ValidationMessage("Street", "*")
+<br />
 <br />
 <p>
     <input type="submit" value="Create" id="SubmitId" />
 </p>
 
 @Scripts.Render("~/bundles/jquery")
-@*Data loading for city dropdownlist*@
 <script type="text/jscript">
+    //Data loading for city dropdownlist
     $(function () {
         $('#Country').change(function () {
             $.getJSON('/City/ListByCountry/' + $('#Country').val(), function (data) {
@@ -28,6 +31,18 @@
                     items += "<option value='" + city.Value + "'>" + city.Text + "</option>";
                 });
                 $('#City').html(items);
+            });
+        });
+    });
+    //Data loading for city dropdownlist
+    $(function () {
+        $('#City').change(function () {
+            $.getJSON('/Street/ListByCity/' + $('#City').val(), function (data) {
+                var items = '<option>Select street</option>';
+                $.each(data, function (i, city) {
+                    items += "<option value='" + city.Value + "'>" + city.Text + "</option>";
+                });
+                $('#Street').html(items);
             });
         });
     });
