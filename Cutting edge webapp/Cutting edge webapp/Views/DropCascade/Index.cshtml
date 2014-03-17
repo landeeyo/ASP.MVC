@@ -31,7 +31,7 @@
     //Data loading for city dropdownlist
     $(function () {
         $('#Country').change(function () {
-            $.getJSON('/City/ListByCountry/' + $('#Country').val(), function (data) {
+            $.getJSON('/api/WebAPI/GetCityListByCountryID/' + $('#Country').val(), function (data) {
                 var items = '<option>Select city</option>';
                 $.each(data, function (i, city) {
                     items += "<option value='" + city.Value + "'>" + city.Text + "</option>";
@@ -45,7 +45,7 @@
     //Data loading for city dropdownlist
     $(function () {
         $('#City').change(function () {
-            $.getJSON('/Street/ListByCity/' + $('#City').val(), function (data) {
+            $.getJSON('/api/WebAPI/GetStreetListByCityID/' + $('#City').val(), function (data) {
                 var items = '<option>Select street</option>';
                 $.each(data, function (i, city) {
                     items += "<option value='" + city.Value + "'>" + city.Text + "</option>";

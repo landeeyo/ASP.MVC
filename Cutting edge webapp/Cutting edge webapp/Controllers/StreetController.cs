@@ -117,14 +117,14 @@ namespace Cutting_edge_webapp.Controllers
             return RedirectToAction("Index");
         }
 
-        //
-        // GET: /Street/ListByCity/5
+        ////
+        //// GET: /Street/ListByCity/5
 
-        public JsonResult ListByCity(int id = 0)
-        {
-            var streetList = db.Streets.Where(s => s.CityID == id).ToArray();
-            return Json(new SelectList(streetList, "StreetID", "Name"), JsonRequestBehavior.AllowGet);
-        }
+        //public JsonResult ListByCity(int id = 0)
+        //{
+        //    var streetList = db.Streets.Where(s => s.CityID == id).ToArray();
+        //    return Json(new SelectList(streetList, "StreetID", "Name"), JsonRequestBehavior.AllowGet);
+        //}
 
         protected override void Dispose(bool disposing)
         {

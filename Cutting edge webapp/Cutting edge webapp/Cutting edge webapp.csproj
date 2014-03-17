@@ -127,6 +127,7 @@
     <Compile Include="Controllers\DropCascadeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StreetController.cs" />
+    <Compile Include="Controllers\WebAPIController.cs" />
     <Compile Include="DAL\LocalizationContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -139,6 +140,7 @@
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\DropCascade.cs" />
+    <Compile Include="Models\ListItem.cs" />
     <Compile Include="Models\Street.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
