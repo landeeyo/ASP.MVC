@@ -2,7 +2,7 @@
 
 namespace Cutting_edge_webapp.Models
 {
-    public class DropCascade
+    public class DropCascadeViewModel
     {
         #region Request
 

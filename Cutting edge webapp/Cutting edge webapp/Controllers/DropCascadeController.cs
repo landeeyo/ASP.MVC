@@ -24,7 +24,7 @@ namespace Cutting_edge_webapp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(DropCascade formData)
+        public ActionResult Index(DropCascadeViewModel formData)
         {
             //TODO
             

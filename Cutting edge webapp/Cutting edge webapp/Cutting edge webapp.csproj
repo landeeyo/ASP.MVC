@@ -139,8 +139,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\DropCascade.cs" />
+    <Compile Include="Models\DropCascadeViewModel.cs" />
     <Compile Include="Models\ListItem.cs" />
+    <Compile Include="Models\News.cs" />
     <Compile Include="Models\Street.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
