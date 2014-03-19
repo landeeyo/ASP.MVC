@@ -136,6 +136,14 @@
     <Compile Include="Migrations\201403151733498_InitialCreate.Designer.cs">
       <DependentUpon>201403151733498_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201403191839160_NewsMigration.cs" />
+    <Compile Include="Migrations\201403191839160_NewsMigration.Designer.cs">
+      <DependentUpon>201403191839160_NewsMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403191846375_NewsChange.cs" />
+    <Compile Include="Migrations\201403191846375_NewsChange.Designer.cs">
+      <DependentUpon>201403191846375_NewsChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Country.cs" />
@@ -258,6 +266,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201403151733498_InitialCreate.resx">
       <DependentUpon>201403151733498_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403191839160_NewsMigration.resx">
+      <DependentUpon>201403191839160_NewsMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403191846375_NewsChange.resx">
+      <DependentUpon>201403191846375_NewsChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

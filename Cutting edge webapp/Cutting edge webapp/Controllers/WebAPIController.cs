@@ -67,5 +67,11 @@ namespace Cutting_edge_webapp.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        [System.Web.Http.HttpGet]
+        public IEnumerable<News> GetNews()
+        {
+            return db.News.OrderByDescending(x => x.CreateDate).ToList();
+        }
     }
 }

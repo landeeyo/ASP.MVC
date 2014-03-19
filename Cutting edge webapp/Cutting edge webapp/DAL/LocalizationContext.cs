@@ -9,6 +9,7 @@ namespace Cutting_edge_webapp.DAL
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Street> Streets { get; set; }
+        public DbSet<News> News { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

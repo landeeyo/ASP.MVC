@@ -62,6 +62,16 @@ namespace Cutting_edge_webapp.Migrations
             };
 
             streets.ForEach(s => context.Streets.AddOrUpdate(p => p.Name, s));
+
+            var news = new List<News>
+            {
+                new News{ Text = "First news", CreateDate = DateTime.Now },
+                new News{ Text = "Second news", CreateDate = DateTime.Now },
+                new News{ Text = "Third news", CreateDate = DateTime.Now }
+            };
+
+            news.ForEach(s => context.News.AddOrUpdate(p => p.Text, s));
+
             context.SaveChanges();
         }
     }

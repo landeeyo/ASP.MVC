@@ -8,19 +8,36 @@
 <h3>Dynamic news</h3>
 
 <section>
+    <div class="news">
+    </div>
 </section>
+
+@Scripts.Render("~/bundles/jquery")
 
 <script type="text/javascript">
 
     function NewsReader() {
+        $.getJSON('/api/WebAPI/GetNews', function (data) {
+            var items = '<table>';
+            $.each(data, function (i, item) {
+                items += "<tr><td>" + item.CreateDate + "</td><td>" + item.Text + "</td></tr>";
+            });
+            items += "</table>";
+            $('.news').html(items);
+        });
     }
 
     function StartNewsReader(interval) {
-        setInterval(NewsReader(), interval);
+        //First read
+        NewsReader();
+        setInterval(NewsReader, interval);
     }
 
     function StopNewsReader() {
-        setInterval(NewsReader(), 0);
+        setInterval(NewsReader, 0);
     }
 
+    function ExecuteOnLoad() {
+        StartNewsReader(1000);
+    }
 </script>

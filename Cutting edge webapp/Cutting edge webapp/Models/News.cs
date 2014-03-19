@@ -15,5 +15,9 @@ namespace Cutting_edge_webapp.Models
         [Required]
         [DataType(DataType.Text)]
         public string Text { get; set; }
+
+        [Required]
+        [DataType(DataType.DateTime)]
+        public DateTime CreateDate { get; set; }
     }
 }
